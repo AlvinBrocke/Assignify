@@ -1,0 +1,136 @@
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-image: url("../images/clothes.jpg");
+    background-size: 100%;
+    background-position: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: changeBackground 20s infinite;
+    height: 100vh;
+    position: relative;
+}
+
+@keyframes changeBackground {
+    0% {
+      background-image: url('../images/cleaning.jpg');
+    }
+    25% {
+      background-image: url('../images/clothes.jpg');
+    }
+    50% {
+      background-image: url('../images/livingroom.jpg');
+    }
+    75% {
+      background-image: url('../images/sweep.jpg');
+    }
+    100% {
+      background-image: url('../images/laundry.jpg');
+    }}
+
+.login-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+  width: 400px; 
+  margin: 0 auto;
+
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
+    border-radius: 15px;
+}
+
+input::placeholder {
+    color: grey;
+    margin-right: 45px;
+  }
+  
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(0, 89, 255);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.social-buttons {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.social-button {
+    width: 50%;
+    padding: 10px;
+    margin: 5px;
+    background-color: white; 
+    color: black;
+    font-weight: bold;
+    border:0.5px solid lightgray;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+}
+
+.logo{
+    height: auto;
+    width: 20px;
+    align-items: center;
+    margin-right: 5px;
+}
+
+#forgot-password {
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+}
+ #no-account {
+    font-size: 14px;
+    font-weight: 300;
+ }
+
+ #welcome-back {
+    font-size: 2em;
+    margin-bottom: 10px;
+ }
+
+ #welcome-message{
+    color: gray;
+    font-weight: 300;
+    font-size: 14px;
+ }
+
+ .error-msg{
+  display: none;
+  color: red;
+  font-size: 14px;
+ }

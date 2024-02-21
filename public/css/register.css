@@ -1,0 +1,124 @@
+
+        body {
+            font-family: 'League Spartan';
+            background-image: url('../images/window.jpg');
+            background-size: 100%;
+            background-position: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            margin: 2em 2em;
+            padding: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        h1 {
+            font-size: 50px;
+            text-transform: initial;
+            text-align: center;
+            margin:  40px 0 0 0;
+        }
+
+        form {
+            width: 400px;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 70px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            color: gray;
+            margin: 15px 0 15px 0;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            align-items: center;
+
+        }
+
+        input[type="radio"] {
+            padding: 10px;
+            margin: 15px 0 15px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 30%;
+            padding: 10px;
+            background-color: rgb(0, 89, 255);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+
+        }
+        .dishes {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #have-account{
+            width: 80%;
+            text-align: RIGHT;
+        }
+        
+        #login-link{
+            font-weight: bold;
+        }
+
+        label::placeholder {
+            color: grey;
+            margin-right: 45px;
+        }
+
+        #gender-field{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input::placeholder {
+            font-family: 'League Spartan';
+            color: lightgray;
+        }
+
+        .button{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .error-msg{
+            display: none;
+            color: red;
+            font-size: 14px;
+            margin-top: 0;
+           }
+
+           select {
+            width: 50%;
+            height: 40px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+           }
+

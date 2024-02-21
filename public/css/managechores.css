@@ -1,0 +1,291 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+
+}
+
+.main-top h1{
+    font-family: 'League Spartan', sans-serif;
+}
+body {
+    background-color: rgb(255, 246, 246);
+}
+
+.container{
+    display: flex;
+}
+
+nav{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 320px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+a{
+    position: relative;
+    color: rgb(85,  83, 83);
+    font-style: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+}
+
+a:hover{
+    background-color: #eee;
+    
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+
+
+}
+
+.help{
+    position: absolute;
+    bottom: 60px;
+}
+
+.settings{
+    position: absolute;
+    bottom: 120px;
+}
+
+/* Main Section */
+.main{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .main h1{
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .main-top{
+    display: flex;
+    width: 100%;
+  }
+  .main-top i{
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(110, 109, 109);
+    cursor: pointer;
+  }
+  .main-skills{
+    display: flex;
+    margin-top: 20px;
+  }
+  .main-skills .card{
+    width: 33%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  .main-skills .card h3{
+    margin: 10px;
+    text-transform: capitalize;
+  }
+  .main-skills .card p{
+    font-size: 12px;
+  }
+  .main-skills .card button{
+    background: orangered;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  .main-skills .card button:hover{
+    background: rgba(223, 70, 15, 0.856);
+  }
+  .main-skills .card i{
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .main-skills .card p{
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  /* Tasks */
+  .main-task{
+    margin-top:60px ;
+    text-transform: capitalize;
+  }
+
+  .task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 0.1px solid lightgray;
+    border: red solid;
+    width: 78%;
+    margin-left: 20px;
+  }
+  .task-box{
+    width: 100%;
+    height: auto;
+    padding: 10px 10px 30px 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+
+    
+  }
+  .task-box ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 80%;
+  }
+
+
+  .task-box ul li i{
+    margin: 10px;
+    color: gray;
+  }
+  .task-box .task{
+    display: flex;
+  }
+  .box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 0.1px solid lightgray;
+  }
+  .box p{
+    font-size:1em;
+    margin-top: 5px;
+    display: inline;
+  }
+  td button{
+    color: blue;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+  }
+
+
+  .tabular--wrapper {
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    color: black;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    color: grey;
+}
+
+th i {
+    margin-right: 10px;
+
+}
+
+tbody {
+    background: #f2f2f2;
+}
+
+td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background: #fff;
+}
+
+tfoot {
+    background: rgba(113, 90, 186, 255);
+    font-weight: bold;
+    color: #fff;
+}
+
+tfoot td {
+    padding: 15px;
+}
+
+.table-container button {
+    color: green;
+    background: none;
+    cursor: pointer;
+}
+
