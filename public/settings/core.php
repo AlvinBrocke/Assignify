@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 function checkLogin()
 {
     if (!isset($_SESSION['user_id'])) {
@@ -8,4 +7,12 @@ function checkLogin()
         die();
     }
 }
-checkLogin();
+
+function checkAdmin()
+{
+    if ($_SESSION['role_id'] != null) {
+        return $_SESSION['role_id'];
+    } else {
+        return false;
+    }
+}

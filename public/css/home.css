@@ -48,7 +48,7 @@ nav{
     margin-top: 5px;
 }
 
-a{
+nav a{
     position: relative;
     color: rgb(85,  83, 83);
     font-style: 14px;
@@ -171,7 +171,6 @@ a:hover{
     align-items: center;
     padding: 10px;
     border-bottom: 0.1px solid lightgray;
-    border: red solid;
     width: 78%;
     margin-left: 20px;
   }
@@ -291,6 +290,10 @@ td button {
   margin-right: 10px;
 }
 
+td a {
+  margin-right: 10px;
+}
+
 [class="fas fa-pen"] {
     color: rgb(49, 156, 255);
 }
@@ -311,9 +314,6 @@ td button {
   color: green;
 }
 
-td button {
-  margin-right: 10px;
-}
 
 .chorelist-addchore{
   display: flex;
@@ -423,4 +423,11 @@ td button {
   display: block;
   width: 100%;
   padding: 8%;
+}
+
+#chore-name-error-msg{
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
 }

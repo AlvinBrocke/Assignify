@@ -26,19 +26,13 @@
           </a>
         </li>
         <li>
-          <a href="#">
-            <i class="fas fa-user"></i>
-            <span class="nav-item">Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="../admin/managechores,php">
+          <a href="../view/managechores.php">
             <i class="fas fa-tasks"></i>
             <span class="nav-item">Manage Chores</span>
           </a>
         </li>
-        <li>>
-          <a href="" class="logout">
+        <li>
+          <a href="../login/logout_view.php" class="logout">
             <i class="fas fa-sign-out-alt"></i>
             <span class="nav-item">Log out</span>
           </a>
@@ -55,17 +49,17 @@
       <h1>Chore Statistics</h1>
       <div class="main-skills">
 
-        <a href="managechores.html" class="card">
+        <a href="managechores.php" class="card">
           <i class="fas fa-clock"></i>
           <h3>In Progress</h3>
           <p>14</p>
         </a>
-        <a href="managechores.html" class="card">
+        <a href="managechores.php" class="card">
           <i class="fas fa-exclamation"></i>
           <h3>Incomplete</h3>
           <p>3</p>
         </a>
-        <a href="managechores.html" class="card">
+        <a href="managechores.php" class="card">
           <i class="fas fa-check"></i>
           <h3>Completed</h3>
           <p>12</p>

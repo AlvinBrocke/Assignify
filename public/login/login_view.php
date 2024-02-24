@@ -19,18 +19,8 @@
         <input type="password" id="password" name="password" placeholder="Password" required />
         <p class="error-msg" id="error-msg"> Incorrect email or password. Try again</p>
       </div>
-      <!-- <div id="forgot-password">
-        <a href="#">Forgot password?</a>
-      </div> -->
       <button type="submit" name="sign-in" id="sign-in" onclick="validateLogin()">Sign In</button>
     </form>
-    <!-- <div class="social-buttons">
-      <button class="social-button" id="google-button"><img class="logo" id="google-logo"
-          src="../images/google-logo.png" alt="Google logo">Continue with Google</button>
-      <button class="social-button" id="apple-button"><img class="logo" id="apple-logo" src="../images/apple-logo.png"
-          alt="Apple Logo">
-        Continue with Apple
-      </button> -->
     <p id="no-account">Don't have an account yet? <a href="../login/register_view.php">Register</a></p>
   </div>
 

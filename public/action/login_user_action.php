@@ -31,8 +31,6 @@ if (!($_SERVER['REQUEST_METHOD'] == 'POST')) {
             // Create a session
             $_SESSION['user_id'] = $row['pid'];
             $_SESSION['role_id'] = $row['rid'];
-            $_SESSION['firstName'] = $row['fname'];
-            $_SESSION['lastName'] = $row['lname'];
             header("Location: ../view/home.php");
             exit();
         }
