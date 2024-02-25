@@ -37,12 +37,6 @@ include "../settings/connection.php";
           </a>
         </li>
         <li>
-          <a href="#" class="help">
-            <i class="fas fa-question-circle"></i>
-            <span class="nav-item">Help</span>
-          </a>
-        </li>
-        <li>
           <a href="../login/logout_view.php" class="logout">
             <i class="fas fa-sign-out-alt"></i>
             <span class="nav-item">Log out</span>
@@ -55,7 +49,6 @@ include "../settings/connection.php";
     <section class="main">
       <div class="main-top">
         <h1>DASHBOARD</h1>
-        <i class="fas fa-user-cog"></i>
       </div>
       <section class="main-task" id="ongoing">
         <h1><i class="fas fa-hourglass-half"></i>Ongoing/pending List</h1>

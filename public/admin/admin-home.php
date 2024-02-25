@@ -15,7 +15,7 @@
       <ul>
         <li>
           <a href="#" class="logo">
-            <img src="assignify logo.png" alt="" />
+            <img src="../images/assignify logo.png" alt="" />
             <span id="name" class="nav-item">Assignify</span>
           </a>
         </li>
@@ -37,23 +37,10 @@
             <span class="nav-item">Chore Assignments</span>
           </a>
         </li>
-        <li>
-          <a href="#" class="settings">
-            <i class="fas fa-cog"></i>
-            <span class="nav-item">Settings</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="help">
-            <i class="fas fa-question-circle"></i>
-            <span class="nav-item">Help</span>
-          </a>
-        </li>
-        <li>
-          <a href="../login/logout_view.php" class="logout">
-            <i class="fas fa-sign-out-alt"></i>
-            <span class="nav-item">Log out</span>
-          </a>
+        <a href="../login/logout_view.php" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a>
         </li>
       </ul>
     </nav>

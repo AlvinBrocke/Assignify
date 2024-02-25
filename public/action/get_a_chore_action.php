@@ -2,30 +2,22 @@
 
 include "../settings/connection.php";
 
-function getAChore($cid)
+//takes one parameter
+function getAChore($id)
 {
     global $conn;
 
-    $query = "SELECT * FROM chores WHERE cid = $cid";
-
-    // Execute the query
+    // query to select one chore based on id
+    $query = "SELECT * FROM Chores WHERE cid = '$id'";
     $result = mysqli_query($conn, $query);
+    $resultCheck = mysqli_num_rows($result);
 
-    // Check if execution worked
-    if ($result) {
-        echo "Query executed successfully";
+    // Checking if execution worked
+    if ($resultCheck > 0) {
+        // Fetch a row from the result set
+        $row = mysqli_fetch_assoc($result);
 
-    } else {
-        die("Query failed: " . mysqli_error($conn));
-    }
-
-    // Check if any record was returned
-    if (mysqli_num_rows($result) > 0) {
-        $chore = mysqli_fetch_assoc($result);
-
-        return $chore;
-    } else {
-        // If no records were returned, return an empty array
-        echo "No records found";
+        // Return the row
+        return $row;
     }
 }

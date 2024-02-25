@@ -44,7 +44,6 @@
     <section class="main">
       <div class="main-top">
         <h1>DASHBOARD</h1>
-        <i class="fas fa-user-cog"></i>
       </div>
       <h1>Chore Statistics</h1>
       <div class="main-skills">
