@@ -86,8 +86,8 @@
           <h2>Add a Chore</h2><img src="../images/close.jpg" alt="close" class="close">
         </div>
         <input type="text" id="chore-name" name="chore-name" placeholder="Chore name">
-        <!-- <p class="error-msg" id="chore-name-error-msg"> Invalid chore name</p> -->
-        <button type="submit" id="addBtn" name="addBtn"> Add</button>
+        <p class="error-msg" id="chore-name-error-msg"> Invalid chore name</p>
+        <button type="submit" id="addChoreSubmitBtn" name="addChoreSubmitBtn"> Add</button>
       </form>
     </div>
   </div>

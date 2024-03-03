@@ -373,7 +373,7 @@ td a {
   margin-bottom: 20px;
 }
 
-#add-chore-form input {
+#add-chore-form input{
   display: block;
   width: 100%;
   padding: 8%;
@@ -405,6 +405,7 @@ td a {
   border-radius: 100%;
 }
 
+/* Assign Chore */
 #assign-chore-form{
   display: flex;
   flex-direction: column;
@@ -412,6 +413,7 @@ td a {
   justify-content: space-between;
   width: 300px;
   margin: auto;
+
 }
 
 #assign-chore-form label{
@@ -430,4 +432,13 @@ td a {
   font-size: 12px;
   margin-top: 5px;
   display: none;
+}
+
+#assign-chore select {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 8%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }

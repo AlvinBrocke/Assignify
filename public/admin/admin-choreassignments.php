@@ -1,3 +1,7 @@
+<?php
+include '../settings/core.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,28 +111,17 @@
   </div>
   <div class="add-chore-background">
     <div class="add-chore-container">
-      <form action="" method="POST" name="assign-chore-form" id="assign-chore-form">
-        <div class="add-chore">
-          <h2>Add a Chore</h2><img src="../images/close.jpg" alt="close" class="close">
+      <form action="action/assign_a_chore_action" method="POST" name="assign-chore-form" id="assign-chore-form">
+        <div class="add-chore" id="assign-chore">
+          <h2>Assign a Chore</h2><img src="../images/close.jpg" alt="close" class="close">
         </div>
-        <label for="chore-category">Assignee:</label><br>
-        <select id="chore-assignee" name="chore-category">
-          <option value="default">Assign person</option>
-          <option value="father">Father</option>
-          <option value="mother">Mother</option>
-          <option value="Brother">Brother</option>
-          <option value="Sister">Sister</option>
-        </select><br>
-        <label for="chore-category">Assign Chore:</label><br>
-        <select id="chore-category" name="chore-category">
-          <option value="default">Assign Chore</option>
-          <option value="laundry">Laundry</option>
-          <option value="wash-car">Wash Car</option>
-          <option value="mow-lawn">Mow Lawn</option>
-          <option value="wash-dishes">Wash Dishes</option>
-        </select><br>
+        <label for="assignee-list">Assignee:</label><br>
+        <?php include "../functions/select_assignee_fxn.php" ?>
+        <label for="chore-list">Assign Chore:</label><br>
+        <?php include "../functions/select_chore_fxn.php" ?>
         <label for="chore-due-date">Due Date</label>
         <input type="date">
+        <p class="error-msg" id="error-msg"> Incorrect email or password. Try again</p>
         <button type="submit" id="assignBtn" name="assignBtn"> Submit</button>
       </form>
     </div>
