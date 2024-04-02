@@ -1,3 +1,8 @@
+<?php
+// include ("../settings/core.php");
+include ('../functions/home_fxn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,17 +56,29 @@
         <a href="managechores.php" class="card">
           <i class="fas fa-clock"></i>
           <h3>In Progress</h3>
-          <p>14</p>
+          <p>
+            <?php
+            echo $numIPA;
+            ?>
+          </p>
         </a>
         <a href="managechores.php" class="card">
           <i class="fas fa-exclamation"></i>
           <h3>Incomplete</h3>
-          <p>3</p>
+          <p>
+            <?php
+            echo $numICA;
+            ?>
+          </p>
         </a>
         <a href="managechores.php" class="card">
           <i class="fas fa-check"></i>
           <h3>Completed</h3>
-          <p>12</p>
+          <p>
+            <?php
+            echo $numCA;
+            ?>
+          </p>
         </a>
       </div>
       <section class="main-task">
@@ -72,28 +89,27 @@
               <thead>
                 <tr>
                   <th><i class="fas fa-clipboard"></i>Task Name</th>
-                  <th><i class="fas fa-user"></i>Assigned To</th>
+                  <th><i class="fas fa-user"></i>Assigned By</th>
                   <th><i class="fas fa-calendar-day"></i>Date Assigned</th>
                   <th><i class="fas fa-spinner"></i>Status</th>
 
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Wash Car</td>
-                  <td>Father</td>
-                  <td>12/09/21</td>
-                  <td>In Progress</td>
-
-                  <td><button>Edit</button></td>
-                </tr>
-                <tr>
-                  <td>Laundry</td>
-                  <td>Mother</td>
-                  <td>23/09/21</td>
-                  <td>Incomplete</td>
-                  <td><button>Edit</button></td>
-                </tr>
+                <?php
+                if (!empty($recentAssignments)) {
+                  foreach ($recentAssignments as $recent) {
+                    echo "<tr>";
+                    echo "<td>" . $recent['chorename'] . " </td>";
+                    echo "<td>" . $recent['who_assigned'] . "</td>";
+                    echo "<td>" . $recent['date_due'] . "</td>";
+                    echo "<td>" . $recent['sname'] . "</td>";
+                    echo "<td><a>Chore details</a></td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='5'>No recent assignments found.</td></tr>";
+                } ?>
               </tbody>
             </table>
           </div>

@@ -1,6 +1,8 @@
 <?php
 include "../settings/core.php";
 include "../action/get_a_chore_action.php";
+checkLogin();
+checkUserRole();
 
 if (isset($_GET['cid'])) {
     // Get the chore ID from the URL

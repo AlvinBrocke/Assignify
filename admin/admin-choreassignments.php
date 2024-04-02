@@ -1,5 +1,8 @@
 <?php
 include '../settings/core.php';
+include "../functions/get_all_assignment_fxn.php";
+checkLogin();
+checkUserRole();
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +58,6 @@ include '../settings/core.php';
     <section class="main">
       <div class="main-top">
         <h1>DASHBOARD<span>admin</span></h1>
-        <i class="fas fa-user-cog"></i>
       </div>
       <section class="main-task">
         <div class="chorelist-addchore">
@@ -78,25 +80,23 @@ include '../settings/core.php';
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Wash Car</td>
-                  <td>Father</td>
-                  <td>12/09/21</td>
-                  <td>13/09/21</td>
-                  <td>In Progress</td>
-
-                  <td><button><i class="fas fa-clock"></i></button><button><i
-                        class="fas fa-exclamation"></i></button><button><i class="fas fa-check"></i></button></td>
-                </tr>
-                <tr>
-                  <td>Laundry</td>
-                  <td>Mother</td>
-                  <td>23/09/21</td>
-                  <td>23/09/21</td>
-                  <td>Incomplete</td>
-                  <td><button><i class="fas fa-clock"></i></button><button><i
-                        class="fas fa-exclamation"></i></button><button><i class="fas fa-check"></i></button></td>
-                </tr>
+                <?php if (!empty($var_data)) {
+                  foreach ($var_data as $assignment) {
+                    echo "<tr>";
+                    echo "<td>" . $assignment['chorename'] . "</td>";
+                    echo "<td>" . $assignment['assigned_by_name'] . "</td>";
+                    echo "<td>" . $assignment['date_assign'] . "</td>";
+                    echo "<td>" . $assignment['date_due'] . "</td>";
+                    echo "<td>" . $assignment['status_name'] . "</td>";
+                    echo "<td>";
+                    echo "<a href='../action/delete_assignment_action.php?assignmentid=" . $assignment['assignmentid'] . "'><button class='deleteBtn'><i class='fas fa-trash'></i></button></a>";
+                    echo "<button><i class='fas fa-check'></i></button>";
+                    echo "</td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='6'>No assignments found.</td></tr>";
+                } ?>
               </tbody>
             </table>
           </div>
@@ -111,17 +111,17 @@ include '../settings/core.php';
   </div>
   <div class="add-chore-background">
     <div class="add-chore-container">
-      <form action="action/assign_a_chore_action" method="POST" name="assign-chore-form" id="assign-chore-form">
+      <form action="../action/assign_a_chore_action.php" method="POST" name="assign-chore-form" id="assign-chore-form">
         <div class="add-chore" id="assign-chore">
           <h2>Assign a Chore</h2><img src="../images/close.jpg" alt="close" class="close">
         </div>
-        <label for="assignee-list">Assignee:</label><br>
+        <label for="assignee">Assignee:</label><br>
         <?php include "../functions/select_assignee_fxn.php" ?>
-        <label for="chore-list">Assign Chore:</label><br>
+        <label for="chores">Assign Chore:</label><br>
         <?php include "../functions/select_chore_fxn.php" ?>
-        <label for="chore-due-date">Due Date</label>
-        <input type="date">
-        <p class="error-msg" id="error-msg"> Incorrect email or password. Try again</p>
+        <label for="due-date">Due Date</label>
+        <input type="date" name="due-date">
+        <p class="error-msg" id="error-msg">Invalid due date</p>
         <button type="submit" id="assignBtn" name="assignBtn"> Submit</button>
       </form>
     </div>

@@ -7,7 +7,7 @@ $result = mysqli_query($conn, $query);
 if ($result) {
     $assignees = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    echo '<select id="assignee-list" name="assignee-list">';
+    echo '<select id="assignee" name="assignee">';
     foreach ($assignees as $person) {
         echo '<option value="' . $person['pid'] . '">' . $person['fname'] . '</option>';
     }

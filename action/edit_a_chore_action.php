@@ -1,7 +1,5 @@
 <?php
-
-// Start session
-session_start();
+include "../settings/core.php";
 
 // Include connection file
 include "../settings/connection.php";

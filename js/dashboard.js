@@ -28,7 +28,7 @@ addBtn.addEventListener('click', function(){
     if (date == ""){
         alert("Please enter a date");
     }
-    if (date > new Date().toISOString().split('T')[0]){
-        alert("Please enter a valid date");
+    if (date < new Date().toISOString().split('T')[0]){
+        document.getElementById("error-msg").style.display = "block";
     }
 });

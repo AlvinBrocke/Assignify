@@ -7,7 +7,7 @@ $result = mysqli_query($conn, $query);
 if ($result) {
     $all_chores = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    echo '<select id="chore-list" name="chore-list">';
+    echo '<select id="chores" name="chores">';
     foreach ($all_chores as $chore) {
         echo '<option value="' . $chore['cid'] . '">' . $chore['chorename'] . '</option>';
     }
@@ -15,4 +15,5 @@ if ($result) {
 } else {
     echo "Query failed: " . mysqli_error($conn);
 }
+
 

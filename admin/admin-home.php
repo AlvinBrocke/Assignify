@@ -1,3 +1,11 @@
+<?php
+include "../functions/home_fxn.php";
+include '../settings/core.php';
+checkLogin();
+checkUserRole();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,19 +28,19 @@
           </a>
         </li>
         <li>
-          <a href="admin-home.php">
+          <a href="../admin/admin-home.php">
             <i class="fas fa-home"></i>
             <span class="nav-item">Home</span>
           </a>
         </li>
         <li>
-          <a href="admin-choremanagement.php">
+          <a href="../admin/admin-choremanagement.php">
             <i class="fas fa-clipboard-check"></i>
             <span class="nav-item">Chore Management</span>
           </a>
         </li>
         <li>
-          <a href="admin-choreassignments.php">
+          <a href="../admin/admin-choreassignments.php">
             <i class="fas fa-tasks"></i>
             <span class="nav-item">Chore Assignments</span>
           </a>
@@ -49,33 +57,40 @@
     <section class="main">
       <div class="main-top">
         <h1>DASHBOARD<span>admin</span></h1>
-        <i class="fas fa-user-cog"></i>
       </div>
       <h1>Chore Statistics</h1>
       <div class="main-skills">
         <a href="managechores.php" class="card">
           <i class="fas fa-globe"></i>
           <h3>All Chores</h3>
-          <p>14</p>
+          <p>
+            <?php echo $numAA; ?>
+          </p>
         </a>
         <a href="managechores.php" class="card">
           <i class="fas fa-clock"></i>
           <h3>In Progress</h3>
-          <p>14</p>
+          <p>
+            <?php echo $numIPA; ?>
+          </p>
         </a>
         <a href="managechores.php" class="card">
           <i class="fas fa-exclamation"></i>
           <h3>Incomplete</h3>
-          <p>3</p>
+          <p>
+            <?php echo $numICA; ?>
+          </p>
         </a>
         <a href="managechores.php" class="card">
           <i class="fas fa-check"></i>
           <h3>Completed</h3>
-          <p>12</p>
+          <p>
+            <?php echo $numCA; ?>
+          </p>
         </a>
       </div>
       <section class="main-task">
-        <h1>Assigned Tasks</h1>
+        <h1>Recently Assigned Tasks</h1>
         <div class="task-box">
           <div class="table-container">
             <table>
@@ -89,21 +104,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Wash Car</td>
-                  <td>Father</td>
-                  <td>12/09/21</td>
-                  <td>In Progress</td>
-
-                  <td><button>Edit</button></td>
-                </tr>
-                <tr>
-                  <td>Laundry</td>
-                  <td>Mother</td>
-                  <td>23/09/21</td>
-                  <td>Incomplete</td>
-                  <td><button>Edit</button></td>
-                </tr>
+                <?php
+                if (!empty($recentAssignments)) {
+                  foreach ($recentAssignments as $recent) {
+                    echo "<tr>";
+                    echo "<td>" . $recent['chorename'] . " </td>";
+                    echo "<td>" . $recent['assigned_to'] . "</td>";
+                    echo "<td>" . $recent['date_due'] . "</td>";
+                    echo "<td>" . $recent['sname'] . "</td>";
+                    echo "<td><a>Chore details</a></td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='5'>No recent assignments found.</td></tr>";
+                } ?>
               </tbody>
             </table>
           </div>

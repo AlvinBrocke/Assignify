@@ -1,6 +1,5 @@
 <?php
-include "../settings/core.php";
-include "../settings/connection.php";
+include "../functions/home_fxn.php";
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +50,7 @@ include "../settings/connection.php";
         <h1>DASHBOARD</h1>
       </div>
       <section class="main-task" id="ongoing">
-        <h1><i class="fas fa-hourglass-half"></i>Ongoing/pending List</h1>
+        <h1></i>Ongoing/pending List</h1>
         <div class="task-box">
           <div class="table-container">
             <table>
@@ -68,23 +67,38 @@ include "../settings/connection.php";
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Wash Car</td>
-                  <td>Father</td>
-                  <td>12/09/21</td>
-                  <td>13/09/21</td>
-                  <td>In Progress</td>
-
-                  <td><button>Edit</button></td>
-                </tr>
-                <tr>
-                  <td>Laundry</td>
-                  <td>Mother</td>
-                  <td>23/09/21</td>
-                  <td>23/09/21</td>
-                  <td>Incomplete</td>
-                  <td><button>Edit</button></td>
-                </tr>
+                <?php
+                $chores = getAllInProgressAssignments();
+                if ($chores != false) {
+                  foreach ($chores as $chore) {
+                    ?>
+                    <tr>
+                      <td>
+                        <?php echo $chore['chorename']; ?>
+                      </td>
+                      <td>
+                        <?php echo $chore['who_assigned']; ?>
+                      </td>
+                      <td>
+                        <?php echo $chore['date_assigned']; ?>
+                      </td>
+                      <td>
+                        <?php echo $chore['date_due']; ?>
+                      </td>
+                      <td>
+                        <?php echo $chore['status']; ?>
+                      </td>
+                      <td>
+                        <a href="../functions/complete_chore.php?id=<?php echo $chore['id']; ?>"
+                          class="complete">Complete</a>
+                      </td>
+                    </tr>
+                    <?php
+                  }
+                } else {
+                  echo "<tr><td colspan='6'>No chores found</td></tr>";
+                }
+                ?>
               </tbody>
             </table>
           </div>
@@ -93,7 +107,7 @@ include "../settings/connection.php";
         </div>
 
         <section class="main-task" id="completed">
-          <h1><i class="fas fa-check"></i>Completed List</h1>
+          <h1></i>Completed List</h1>
           <div class="task-box">
             <div class="table-container">
               <table>
@@ -110,23 +124,38 @@ include "../settings/connection.php";
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Bath Dogs</td>
-                    <td>Brother</td>
-                    <td>12/09/21</td>
-                    <td>12/09/21</td>
-                    <td>Completed</td>
-
-                    <td><button>Edit</button></td>
-                  </tr>
-                  <tr>
-                    <td>Make the bed</td>
-                    <td>Sister</td>
-                    <td>23/09/21</td>
-                    <td>23/09/21</td>
-                    <td>Completed</td>
-                    <td><button>Edit</button></td>
-                  </tr>
+                  <?php
+                  $chores = getAllCompletedAssignments();
+                  if ($chores != false) {
+                    foreach ($chores as $chore) {
+                      ?>
+                      <tr>
+                        <td>
+                          <?php echo $chore['chorename']; ?>
+                        </td>
+                        <td>
+                          <?php echo $chore['who_assigned']; ?>
+                        </td>
+                        <td>
+                          <?php echo $chore['date_assigned']; ?>
+                        </td>
+                        <td>
+                          <?php echo $chore['date_due']; ?>
+                        </td>
+                        <td>
+                          <?php echo $chore['status']; ?>
+                        </td>
+                        <td>
+                          <a href="../functions/complete_chore.php?id=<?php echo $chore['id']; ?>"
+                            class="complete">Complete</a>
+                        </td>
+                      </tr>
+                      <?php
+                    }
+                  } else {
+                    echo "<tr><td colspan='6'>No chores found</td></tr>";
+                  }
+                  ?>
                 </tbody>
               </table>
             </div>

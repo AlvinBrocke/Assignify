@@ -1,3 +1,9 @@
+<?php
+include "../functions/chore_fxn.php";
+include "../settings/core.php";
+checkUserRole();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,19 +27,19 @@
           </a>
         </li>
         <li>
-          <a href="admin-home.php">
+          <a href="../admin/admin-home.php">
             <i class="fas fa-home"></i>
             <span class="nav-item">Home</span>
           </a>
         </li>
         <li>
-          <a href="admin-choremanagement.php">
+          <a href="../admin/admin-choremanagement.php">
             <i class="fas fa-clipboard-check"></i>
             <span class="nav-item">Chore Management</span>
           </a>
         </li>
         <li>
-          <a href="admin-choreassignments.php">
+          <a href="../admin/admin-choreassignments.php">
             <i class="fas fa-tasks"></i>
             <span class="nav-item">Chore Assignments</span>
           </a>
@@ -68,7 +74,20 @@
               </thead>
               <tbody>
                 <?php
-                include "../functions/chore_fxn.php";
+                if (!empty($var_data)) {
+                  foreach ($var_data as $chore) {
+
+                    echo "<tr>";
+                    echo "<td>" . $chore['chorename'] . "</td>";
+                    echo "<td>";
+                    echo "<a href='../admin/edit_chore_view.php?cid=" . $chore['cid'] . "'><button class='editBtn'><i class='fas fa-pen'></i></button></a>"; // Edit icon
+                    echo "<a href='../action/delete_chore_action.php?cid=" . $chore['cid'] . "'><button class='deleteBtn'><i class='fas fa-trash'></i></button></a>"; // Delete icon
+                    echo "</td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='2'>No chores found.</td></tr>";
+                }
                 ?>
               </tbody>
             </table>

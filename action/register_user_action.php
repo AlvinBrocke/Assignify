@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Hash Password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $rid = 3;
-    $people_sql = "INSERT INTO People (rid, fid, fname, lname, gender, dob, tel, email, passwd) 
+    $people_sql = "INSERT INTO people (rid, fid, fname, lname, gender, dob, tel, email, passwd) 
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($people_sql);
     $stmt->bind_param("isssissss", $rid, $familyRole, $firstName, $lastName, $gender, $dob, $phoneNumber, $email, $hashedPassword);

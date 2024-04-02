@@ -1,7 +1,6 @@
 <?php
 include "../settings/core.php";
-include "../settings/connection.php";
-session_start();
+
 
 // Check if the user is logged in
 checkLogin();
