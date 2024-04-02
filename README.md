@@ -1,2 +1,3 @@
 # Assignify
-Assignify revolutionizes chore management with its intuitive web app. Designed for households, teams, or organizations, Assignify simplifies task assignment and tracking. Its user-friendly interface ensures efficient delegation, progress monitoring, and accountability. No more confusion or missed deadlines
+Assignify is a personal chore management web application project. It is designed for households, teams, or organizations. 
+Assignify's aims to simplify task assignment and tracking through user-friendly interface that ensures efficient delegation, progress monitoring, and accountability.
